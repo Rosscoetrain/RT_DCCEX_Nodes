@@ -1,0 +1,169 @@
+/*
+ *
+ * @file myAutomation_Nodes_Servo.h
+ *
+ */
+
+ /*
+ *  © 2026 Ross Scanlon
+ *
+ */
+
+#include "NVSTable.h"
+
+//CONFIGURE_DIALOG("RosscoeTrain Wifi Setup",myRTWifiDialog)
+
+#if defined(DCCEX_NODE_SERVO) || defined(DCCEX_NODE_NANO_SERVO)
+
+HAL(PCA9685, 100, 16, 0x40)
+HAL(PCA9685, 116, 16, 0x41)
+
+HAL(PCA9555,164,16,0x20)
+HAL(PCA9555,180,16,0x21)
+
+AUTOSTART
+PARSE("<D SHARE>")
+HAL(NVSMap,1000)  // maps over nvs0..255
+DONE
+
+#endif
+
+
+#ifdef DCCEX_NODE_SERVO
+#endif
+
+#ifdef DCCEX_NODE_NANO_SERVO
+#endif
+
+#if defined(DCCEX_NODE_SERVO) || defined(DCCEX_NODE_NANO_SERVO)
+
+//extern const char* myRTServoConfig_html;
+//extern const char* myRTServoLedsConfig_html;
+//extern const char* myRTServoHelpConfig_html;
+
+
+CONFIGURE_DIALOG("RosscoeTrain Servo",myRTServoConfig)
+CONFIGURE_DIALOG("RosscoeTrain Servo Leds",myRTServoLedsConfig)
+CONFIGURE_DIALOG("RosscoeTrain Servo Help",myRTServoHelpConfig)
+
+ALIAS(TRN_1, 1)
+ALIAS(TRN_2, 2)
+ALIAS(TRN_3, 3)
+ALIAS(TRN_4, 4)
+ALIAS(TRN_5, 5)
+ALIAS(TRN_6, 6)
+ALIAS(TRN_7, 7)
+ALIAS(TRN_8, 8)
+ALIAS(TRN_9, 9)
+ALIAS(TRN_10, 10)
+ALIAS(TRN_11, 11)
+ALIAS(TRN_12, 12)
+ALIAS(TRN_13, 13)
+ALIAS(TRN_14, 14)
+ALIAS(TRN_15, 15)
+ALIAS(TRN_16, 16)
+
+
+//SERVO_TURNOUT(NVS(0), 100, NVS(1), NVS(2), Slow, NVST(4))
+SERVO_TURNOUT(NVS(0), 100, NVS(1), NVS(2), Instant + NVS(3), NVST(4))
+SERVO_TURNOUT(NVS(0) + 1, 101, NVS(5), NVS(6), Instant + NVS(7), NVST(8))
+SERVO_TURNOUT(NVS(0) + 2, 102, NVS(9), NVS(10), Instant + NVS(11), NVST(12))
+SERVO_TURNOUT(NVS(0) + 3, 103, NVS(13), NVS(14), Instant + NVS(15), NVST(16))
+SERVO_TURNOUT(NVS(0) + 4, 104, NVS(17), NVS(18), Instant + NVS(19), NVST(20))
+SERVO_TURNOUT(NVS(0) + 5, 105, NVS(21), NVS(22), Instant + NVS(23), NVST(24))
+SERVO_TURNOUT(NVS(0) + 6, 106, NVS(25), NVS(26), Instant + NVS(27), NVST(28))
+SERVO_TURNOUT(NVS(0) + 7, 107, NVS(29), NVS(30), Instant + NVS(31), NVST(32))
+SERVO_TURNOUT(NVS(0) + 8, 108, NVS(33), NVS(34), Instant + NVS(35), NVST(36))
+SERVO_TURNOUT(NVS(0) + 9, 109, NVS(37), NVS(38), Instant + NVS(39), NVST(40))
+SERVO_TURNOUT(NVS(0) + 10, 110, NVS(41), NVS(42), Instant + NVS(43), NVST(44))
+SERVO_TURNOUT(NVS(0) + 11, 111, NVS(45), NVS(46), Instant + NVS(47), NVST(48))
+SERVO_TURNOUT(NVS(0) + 12, 112, NVS(49), NVS(50), Instant + NVS(51), NVST(52))
+SERVO_TURNOUT(NVS(0) + 13, 113, NVS(53), NVS(54), Instant + NVS(55), NVST(56))
+SERVO_TURNOUT(NVS(0) + 14, 114, NVS(57), NVS(58), Instant + NVS(59), NVST(60))
+SERVO_TURNOUT(NVS(0) + 15, 115, NVS(61), NVS(52), Instant + NVS(63), NVST(64))
+
+ONCLOSE(NVS(0))\
+ DONE
+ONTHROW(NVS(0))\
+ DONE
+
+ONCLOSE(NVS(0) + 1)\
+ DONE
+ONTHROW(NVS(0) + 1)\
+ DONE
+
+ONCLOSE(NVS(0) + 2)\
+ DONE
+ONTHROW(NVS(0) + 2)\
+ DONE
+
+ONCLOSE(NVS(0) + 3)\
+ DONE
+ONTHROW(NVS(0) + 3)\
+ DONE
+
+ONCLOSE(NVS(0) + 4)\
+ DONE
+ONTHROW(NVS(0) + 4)\
+ DONE
+
+ONCLOSE(NVS(0) + 5)\
+ DONE
+ONTHROW(NVS(0) + 5)\
+ DONE
+
+ONCLOSE(NVS(0) + 6)\
+ DONE
+ONTHROW(NVS(0) + 6)\
+ DONE
+
+ONCLOSE(NVS(0) + 7)\
+ DONE
+ONTHROW(NVS(0) + 7)\
+ DONE
+
+ONCLOSE(NVS(0) + 8)\
+ DONE
+ONTHROW(NVS(0) + 8)\
+ DONE
+
+ONCLOSE(NVS(0) + 9)\
+ DONE
+ONTHROW(NVS(0) + 9)\
+ DONE
+
+ONCLOSE(NVS(0) + 10)\
+ DONE
+ONTHROW(NVS(0) + 10)\
+ DONE
+
+ONCLOSE(NVS(0) + 11)\
+ DONE
+ONTHROW(NVS(0) + 11)\
+ DONE
+
+ONCLOSE(NVS(0) + 12)\
+ DONE
+ONTHROW(NVS(0) + 12)\
+ DONE
+
+ONCLOSE(NVS(0) + 13)\
+ DONE
+ONTHROW(NVS(0) + 13)\
+ DONE
+
+ONCLOSE(NVS(0) + 14)\
+ DONE
+ONTHROW(NVS(0) + 14)\
+ DONE
+
+ONCLOSE(NVS(0) + 15)\
+ DONE
+ONTHROW(NVS(0) + 15)\
+ DONE
+
+
+
+#endif
+
+
